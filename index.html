@@ -1,3 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawer Ejemplo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="menu-button" aria-label="Abrir menú lateral">☰</button>
+            <h1>Mi Página</h1>
+        </header>
+
+        <main>
+            <p>Contenido principal de la página...</p>
+        </main>
+
+        <nav class="drawer">
+            <div class="drawer-header">
+                <h2>Menú</h2>
+                <button class="close-button" aria-label="Cerrar menú lateral">×</button>
+            </div>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="overlay"></div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div style="border: 1px solid #ccc; padding: 5px; display: flex; align-items: center;">
     <input type="text" placeholder="SearchView" style="border: none; border-bottom: 1px solid #5bc0de; flex-grow: 1; padding: 5px; outline: none;">
     <span style="font-size: 18px; margin-left: 5px;"></span>
