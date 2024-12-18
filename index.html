@@ -127,6 +127,54 @@
 
 
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Audio</title>
+</head>
+<body>
 
+    <h1>Reproductor de Audio</h1>
+
+    <audio id="audioPlayer" controls>
+        <source src="" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <br>
+    <input type="text" id="urlInput" placeholder="Ingresa la URL del video">
+    <button onclick="cargarAudio()">Cargar Audio</button>
+
+    <script>
+      function cargarAudio() {
+        let url = document.getElementById("urlInput").value;
+
+          // Extrae el ID del video de YouTube
+          const videoId = extraerIdYouTube(url);
+          if (!videoId) {
+            alert("Por favor, ingresa una URL válida de YouTube.");
+            return;
+          }
+
+          const audioSrc = `https://pipedproxy.kavin.rocks/stream/${videoId}`;
+
+        
+          const audioPlayer = document.getElementById("audioPlayer");
+          audioPlayer.src = audioSrc;
+          audioPlayer.load();
+          audioPlayer.play();
+        }
+
+      function extraerIdYouTube(url) {
+        const youtubeRegex = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+        const match = url.match(youtubeRegex);
+        return match ? match[1] : null;
+      }
+    </script>
+
+</body>
+</html>
 
 
