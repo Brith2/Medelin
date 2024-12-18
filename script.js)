@@ -1,20 +1,13 @@
-const menuButton = document.querySelector('.menu-button');
-const closeButton = document.querySelector('.close-button');
-const drawer = document.querySelector('.drawer');
-const overlay = document.querySelector('.overlay');
+const container = document.getElementById('container');
 
-menuButton.addEventListener('click', () => {
-    drawer.classList.add('open');
-    overlay.classList.add('open');
-});
+container.addEventListener('touchstart', (event) => {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    circle.style.left = event.touches[0].clientX + 'px';
+    circle.style.top = event.touches[0].clientY + 'px';
+    container.appendChild(circle);
 
-closeButton.addEventListener('click', () => {
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
-});
-
-
-overlay.addEventListener('click', () => {
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
+    setTimeout(() => {
+        circle.remove();
+    }, 1000); // Desaparece después de 1 segundo
 });
