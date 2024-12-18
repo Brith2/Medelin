@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+header {
+    background-color: #222;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-toggle{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+
+}
+.bar{
+    background-color: white;
+    height: 3px;
+    width: 100%;
+}
+
+.menu-container {
+    position: absolute; /* Se usa una posición absoluta para controlar el flujo */
+    top: 50px; /* Empieza desde abajo de la barra de navegación */
+    right: 10px; /* Espaciado desde la derecha */
+    background-color: #333;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%); /* Oculta el menú al principio */
+    transition: transform 0.3s ease-in-out;
+        display: none; /* Oculta el menu al inicio */
+}
+
+.menu-container.active {
+    transform: translateX(0);
+     display: block; /* Muestra el menu cuando esta activo */
+}
+.close-menu {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.close-menu span{
+    color:white;
+}
+
+.menu {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.menu li {
+    padding: 10px 0;
+}
+.menu li a{
+    color: white;
+    text-decoration: none;
+}
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos de la barra de búsqueda */
+.search-container {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+     max-width: 300px; /* Limita el ancho del input */
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+
+/* Estilos para las imágenes y la sección de contenido */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+hr {
+    border: 0.5px solid #555;
+    margin: 20px 0;
+}
+@media (min-width: 768px){
+    .menu-toggle{
+        display: none;
+    }
+     .menu-container{
+        position: static;
+        transform: translateX(0);
+          display: block;
+        background: none;
+        width:auto;
+        box-shadow: none;
+    }
+       .close-menu{
+       display: none;
+   }
+}
