@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+    const menuContainer = document.getElementById('menu-container');
+       const closeMenu = document.getElementById('close-menu');
 
     menuToggle.addEventListener('click', function() {
-        menu.classList.toggle('active');
+        menuContainer.classList.toggle('active');
+    });
+      closeMenu.addEventListener('click', function() {
+        menuContainer.classList.remove('active');
     });
 });
