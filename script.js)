@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyCO3FjWv0dweKSrA63aAluOLElhpoCCQdQ"; // <-- ¡CLAVE API INCLUIDA DIRECTAMENTE!
+const API_KEY = "AIzaSyBVZ_bneoEg2zAUPopteY23u4N89F1ljAE"; // <-- ¡CLAVE API INCLUIDA DIRECTAMENTE!
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 const chatHistory = document.getElementById('chat-history');
